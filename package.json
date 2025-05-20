@@ -1,0 +1,27 @@
+{
+  "name": "oyashiro",
+  "version": "1.0.0",
+  "description": "Oyashiro - is list of your viewed or plan to watch titles",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "com.example.oyashiro",
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.1.1",
+    "electron-builder": "^26.0.12"
+  }
+}

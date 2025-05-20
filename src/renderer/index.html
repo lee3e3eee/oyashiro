@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyashiro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Мои просмотренные тайтлы</h1>
+        <div style="display: flex;">
+            <div style="width: 50%; display: flex; justify-content: center;">
+                <div id="coverPreview" class="cover-preview"></div>
+            </div>
+            
+            <div class="form-group" style="display: flex; flex-direction: column;width: 50%;">
+                <input type="text" id="titleInput" placeholder="Название тайтла" style="width: 100%;">
+                <input type="number" id="episodesInput" placeholder="Количество эпизодов" style="width: 100%;">
+                <select id="statusSelect" style="width: 100%;">
+                    <option value="completed">Завершено</option>
+                    <option value="watching">Смотрю</option>
+                    <option value="planned">В планах</option>
+                </select>
+                <input type="number" id="ratingInput" placeholder="Оценка (1-10)" min="1" max="10" style="width: 100%;">
+                <div style="display: flex; width: 100%;">
+                    <label for="coverInput" class="cover-upload-btn">Добавить обложку</label>
+                    <input type="file" id="coverInput" accept="image/*" style="display: none;">
+                    <button id="removeCoverBtn" class="removeCoverBtn"">Удалить обложку</button>
+                </div>
+                <button id="addBtn" style="width: 100%;cursor: pointer;">Добавить</button>
+            </div>
+        </div>
+
+
+        <div class="filter-group">
+            <input type="text" id="searchInput" placeholder="Поиск...">
+            <select id="filterSelect">
+                <option value="all">Все</option>
+                <option value="completed">Завершённые</option>
+                <option value="watching">Смотрю</option>
+                <option value="planned">В планах</option>
+            </select>
+        </div>
+
+        <table id="titlesTable">
+            <thead>
+                <tr>
+                    <th>Обложка</th>
+                    <th>Название</th>
+                    <th>Эпизоды</th>
+                    <th>Статус</th>
+                    <th>Оценка</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
